@@ -8,7 +8,7 @@ This container is useful for people that would want to develop and test projects
 * MySQL - Relational database management system 
 * PHP - Scripted object-oriented language
 
-However, this container is not the best code of practice  because of *** you should stack your code?
+However, this container is not the best code of practice because the purpose of docker is to be lightweight and agile. Therefore on a production level you should limit compute processes to one per container. It will lead to chaos, looking for logs, troubleshooting along the pipeline etc.  
 
 ## mylesp/dockerlamp:latest
 contents: 
