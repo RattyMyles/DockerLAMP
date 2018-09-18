@@ -1,6 +1,13 @@
 # Ubuntu 18.04 with LAMP.
 
-This container is for developing and testing using the LAMP bundle for ease of use. This is ideal for people that are learning or testing out projects.
+From experience, when I first started out playing around with web development it can be very confusing setting it up. This is a clean bundle build for a LAMP platform. Using docker, this will allow you to pull the build and trash the build with ease.
+
+This container is useful for people that would want to develop and test projects on a web platform. LAMP is an open-source web development platform. LAMP contains: 
+* Linux - Operating system 
+* Apache - Web server
+* MySQL - Relational database management system 
+* PHP - Scripted object-oriented language
+
 However, this container is not the best code of practice  because of *** you should stack your code?
 
 ## mylesp/dockerlamp:latest
@@ -32,9 +39,17 @@ contents:
 * Replace %LOCAL_PATH_TO_HOME_DIRECTORY% with the local file directory of the website content you wish to be stored in.
 * For example: "/root/home/docker/html/" or "/root/home/docker/website/"
 
-* Replace %mysql_data_volume_variable%,%mysql_log_volume_variable%, %apache_data_volume_variable% and %httpd_data_volume_variable%
+* Replace %mysql_data_volume_variable%,, %apache_data_volume_variable% and %httpd_data_volume_variable%
 with reasonable variable names for the name of the volumes.
 * For example: docker volume create mysql_data
+* Replace these variables to the desired volume name. For example: 
+
+|        ####Example          |
+|-----------------------------|
+|%mysql_data_volume_variable% |
+|%mysql_log_volume_variable%  |
+|%apache_data_volume_variable%|
+|%httpd_data_volume_variable% |
 
 Example of a working code line:
 ```
