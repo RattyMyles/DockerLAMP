@@ -39,9 +39,7 @@ contents:
 * Replace %LOCAL_PATH_TO_HOME_DIRECTORY% with the local file directory of the website content you wish to be stored in.
 * For example: "/root/home/docker/html/" or "/root/home/docker/website/"
 
-* Replace %mysql_data_volume_variable%,, %apache_data_volume_variable% and %httpd_data_volume_variable%
-with reasonable variable names for the name of the volumes.
-* For example: docker volume create mysql_data
+
 * Replace these variables to the desired volume name. For example: 
 
 |        Change these         |     Example
