@@ -44,12 +44,12 @@ with reasonable variable names for the name of the volumes.
 * For example: docker volume create mysql_data
 * Replace these variables to the desired volume name. For example: 
 
-|        ####Example          |
-|-----------------------------|
-|%mysql_data_volume_variable% |
-|%mysql_log_volume_variable%  |
-|%apache_data_volume_variable%|
-|%httpd_data_volume_variable% |
+|        Change these         |     Example
+|-----------------------------|---------------
+|%mysql_data_volume_variable% | mysql_data 
+|%mysql_log_volume_variable%  | mysql_log
+|%apache_data_volume_variable%| apache_data
+|%httpd_data_volume_variable% | httpd_data
 
 Example of a working code line:
 ```
