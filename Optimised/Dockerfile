@@ -26,7 +26,9 @@ RUN apt-get -y update && \
 	sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf && \
 	apt-get -y autoclean && apt-get -y autoremove && \
 	apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) && \
-	rm -rf /var/lib/apt/lists/* 
+	rm -rf /var/lib/apt/lists/* && \
+	echo "#!/bin/bash" >  /root/startup.sh && \
+	echo "/usr/bin/supervisord -n" >>  /root/startup.sh
 
 VOLUME /var/www/html
 VOLUME /var/log/httpd
@@ -34,7 +36,6 @@ VOLUME /var/lib/mysql
 VOLUME /var/log/mysql
 VOLUME /etc/apache2  
 
-ADD startup.sh /root/startup.sh
-CMD ["/bin/bash", "/root/startup.sh"]
-
 EXPOSE 80
+
+CMD ["/bin/bash", "/root/startup.sh"]
