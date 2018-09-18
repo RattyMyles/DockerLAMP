@@ -6,7 +6,7 @@ ENV INITRD No
 
 
 RUN apt-get -y update && \
-	apt-get -y install apache2 \
+	apt-get -y install --no-install-recommends apache2 \
 		mysql-server \
 		php \
 		libapache2-mod-php \
