@@ -30,11 +30,11 @@ RUN apt-get -y update && \
 	echo "#!/bin/bash" >  /root/startup.sh && \
 	echo "/usr/bin/supervisord -n" >>  /root/startup.sh
 
-VOLUME /var/www/html
-VOLUME /var/log/httpd
-VOLUME /var/lib/mysql
-VOLUME /var/log/mysql
-VOLUME /etc/apache2  
+#VOLUME /var/www/html
+#VOLUME /var/log/httpd
+#VOLUME /var/lib/mysql
+#VOLUME /var/log/mysql
+#VOLUME /etc/apache2  
 
 EXPOSE 80
 
