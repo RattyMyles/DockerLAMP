@@ -59,21 +59,23 @@ If you haven't got docker on your machine, follow these instructions to start yo
 2) Now that docker has been installed, install the mylesp/dockerlamp container below. The code below will show a working version below, however if wish to change the variables, refer to the document above on what to change.
 ```
 mkdir -p /root/home/docker/html
+mkdir -p /root/home/docker/mysql_log
+mkdir -p /root/home/docker/httpd_log
 docker volume create mysql_data 
 docker volume create mysql_log
 docker volume create apache_data
-docker volume create httpd_data
+
 
 docker run -d --name mylespLAMP18.04 \
      -p 80:80 \
      -v mysql_data:/var/lib/mysql/ \
-     -v mysql_log:/var/log/mysql/ \
+     -v /root/home/docker/mysql_log/:/var/log/mysql/ \
      -v apache_data:/etc/apache2/ \
      -v /root/home/docker/html/:/var/www/html/ \
-     -v httpd_data:/var/log/httpd/ \
+     -v /root/home/docker/httpd_log/:/var/log/httpd/ \
      --restart unless-stopped \
      mylesp/dockerlamp:latest
- ```
+```
 
 
 3) Congratulations! you've installed your first docker container in minutes! Now, lets test to see if it works. You can use your domain name or IP address of the server/machine that it is running on. Here is an example below: 
