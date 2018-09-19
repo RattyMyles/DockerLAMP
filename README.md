@@ -68,7 +68,7 @@ docker run -d --name mylespLAMP18.04 \
  mylesp/dockerlamp:latest
 ```
 
-## Instructions for Linux 18.04
+## Instructions for Ubuntu 14.04, 16.04, 18.04
 
 If you haven't got docker on your machine, follow these instructions to start you off. If you are the type that have little patients, this is great because you will see how easy and quick to install docker and the docker container in minutes.
 
