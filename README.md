@@ -131,6 +131,6 @@ If you have a windows machine don't sweat, here is the instructions for this typ
 
 2) Once installed, you'll need to verify the installation by going into the menu to search and select docker. For example: 
 
-![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/docker-app-search.PNG  "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/docker-app-search.png  "Logo Title Text 1")
 
 
