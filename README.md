@@ -127,5 +127,5 @@ If you have a windows machine don't sweat, here is the instructions for this typ
 
 1) The first thing you'll need to do is install docker. Go on to this site to download docker https://store.docker.com/editions/community/docker-ce-desktop-windows. Here is a screenshot on what it should look like:
 
-Inline-style: ![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/docker_install_w.PNG "Logo Title Text 1")
+Inline-style: ![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/docker_install_w.PNG)
 
