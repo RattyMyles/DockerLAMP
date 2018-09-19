@@ -22,36 +22,7 @@ contents:
   * libapache2-mod-php
   * supervisor
   * apache2
-```
-    mkdir -p %LOCAL_PATH_TO_HOME_DIRECTORY% 
-    docker volume create %mysql_data_volume_variable% 
-    docker volume create %mysql_log_volume_variable% 
-    docker volume create %apache_data_volume_variable% 
-    docker volume create %httpd_data_volume_variable% 
-    
-    docker run -d --name mylespLAMP18.04 \
-     -p 80:80 \
-     -v %mysql_data_volume_variable%:/var/lib/mysql/ \
-     -v %mysql_log_volume_variable%:/var/log/mysql/ \
-     -v %apache_data_volume_variable%:/etc/apache2/ \
-     -v %LOCAL_PATH_TO_HOME_DIRECTORY%:/var/www/html/ \
-     -v %httpd_data_volume_variable%:/var/log/httpd/ \
-     --restart unless-stopped \
-     mylesp/dockerlamp:latest
-```
 
-* Replace %LOCAL_PATH_TO_HOME_DIRECTORY% with the local file directory of the website content you wish to be stored in.
-* For example: "/root/home/docker/html/" or "/root/home/docker/website/"
-
-
-* Replace these variables to the desired volume name. For example: 
-
-|        Change these         |     Example
-|-----------------------------|---------------
-|%mysql_data_volume_variable% | mysql_data 
-|%mysql_log_volume_variable%  | mysql_log
-|%apache_data_volume_variable%| apache_data
-|%httpd_data_volume_variable% | httpd_data
 
 Example of a working code line:
 ```
