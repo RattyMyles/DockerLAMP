@@ -135,7 +135,7 @@ If you have a windows machine don't sweat, here is the instructions for this typ
 
 ### Side note:
 To see if docker is running on your machine, you will see this icon:
-![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/whale-icon-systray.png  "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/iconImage.png  "Logo Title Text 1")
 
 
 
