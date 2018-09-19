@@ -8,7 +8,7 @@ This container is useful for people that would want to develop and test projects
 * MySQL - Relational database management system 
 * PHP - Scripted object-oriented language
 
-However, this container is not the best code of practice because the purpose of docker is to be lightweight and agile. Therefore on a production level you should limit compute processes to one per container. It will lead to chaos, looking for logs, troubleshooting along the pipeline etc.  
+However, this container is not the best code of practice because the purpose of docker is to be lightweight and agile. Therefore on a production level you should limit compute processes to one per container. 
 
 ## mylesp/dockerlamp:latest
 contents: 
@@ -26,14 +26,14 @@ contents:
     docker volume create %httpd_data_volume_variable% 
     
     docker run -d --name mylespLAMP18.04 \
-    -p 80:80 \
-    -v %mysql_data_volume_variable%:/var/lib/mysql/ \
-    -v %mysql_log_volume_variable%:/var/log/mysql/ \
-    -v %apache_data_volume_variable%:/etc/apache2/ \
-    -v %LOCAL_PATH_TO_HOME_DIRECTORY%:/var/www/html/ \
-    -v %httpd_data_volume_variable%:/var/log/httpd/ \
-    --restart unless-stopped \
-    mylesp/dockerlamp:latest
+     -p 80:80 \
+     -v %mysql_data_volume_variable%:/var/lib/mysql/ \
+     -v %mysql_log_volume_variable%:/var/log/mysql/ \
+     -v %apache_data_volume_variable%:/etc/apache2/ \
+     -v %LOCAL_PATH_TO_HOME_DIRECTORY%:/var/www/html/ \
+     -v %httpd_data_volume_variable%:/var/log/httpd/ \
+     --restart unless-stopped \
+     mylesp/dockerlamp:latest
 ```
 
 * Replace %LOCAL_PATH_TO_HOME_DIRECTORY% with the local file directory of the website content you wish to be stored in.
@@ -58,12 +58,12 @@ docker volume create apache_data
 docker volume create httpd_data
 
 docker run -d --name mylespLAMP18.04 \
--p 80:80 \
--v mysql_data:/var/lib/mysql/ \
--v mysql_log:/var/log/mysql/ \
--v apache_data:/etc/apache2/ \
--v /root/home/docker/html/:/var/www/html/ \
--v httpd_data:/var/log/httpd/ \
---restart unless-stopped \
-mylesp/dockerlamp:latest
+ -p 80:80 \
+ -v mysql_data:/var/lib/mysql/ \
+ -v mysql_log:/var/log/mysql/ \
+ -v apache_data:/etc/apache2/ \
+ -v /root/home/docker/html/:/var/www/html/ \
+ -v httpd_data:/var/log/httpd/ \
+ --restart unless-stopped \
+ mylesp/dockerlamp:latest
 ```
