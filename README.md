@@ -58,19 +58,19 @@ docker volume create apache_data
 docker volume create httpd_data
 
 docker run -d --name mylespLAMP18.04 \
- -p 80:80 \
- -v mysql_data:/var/lib/mysql/ \
- -v mysql_log:/var/log/mysql/ \
- -v apache_data:/etc/apache2/ \
- -v /root/home/docker/html/:/var/www/html/ \
- -v httpd_data:/var/log/httpd/ \
- --restart unless-stopped \
- mylesp/dockerlamp:latest
+     -p 80:80 \
+     -v mysql_data:/var/lib/mysql/ \
+     -v mysql_log:/var/log/mysql/ \
+     -v apache_data:/etc/apache2/ \
+     -v /root/home/docker/html/:/var/www/html/ \
+     -v httpd_data:/var/log/httpd/ \
+     --restart unless-stopped \
+     mylesp/dockerlamp:latest
 ```
 
 ## Instructions for Ubuntu 14.04, 16.04, 18.04
 
-If you haven't got docker on your machine, follow these instructions to start you off. If you are the type that have little patients, this is great because you will see how easy and quick to install docker and the docker container in minutes.
+If you haven't got docker on your machine, follow these instructions to start you off. If you are the type that have little patients, this is great because you will see how easy and quick to install docker and the docker container in minutes. Please refer to the docker documentation if you don't wish to follow these instructions https://docs.docker.com/v17.12/install/. 
 
 1) Type the code below in the terminal to install the repository and docker. 
 ```
@@ -88,14 +88,14 @@ docker volume create apache_data
 docker volume create httpd_data
 
 docker run -d --name mylespLAMP18.04 \
- -p 80:80 \
- -v mysql_data:/var/lib/mysql/ \
- -v mysql_log:/var/log/mysql/ \
- -v apache_data:/etc/apache2/ \
- -v /root/home/docker/html/:/var/www/html/ \
- -v httpd_data:/var/log/httpd/ \
- --restart unless-stopped \
- mylesp/dockerlamp:latest
+     -p 80:80 \
+     -v mysql_data:/var/lib/mysql/ \
+     -v mysql_log:/var/log/mysql/ \
+     -v apache_data:/etc/apache2/ \
+     -v /root/home/docker/html/:/var/www/html/ \
+     -v httpd_data:/var/log/httpd/ \
+     --restart unless-stopped \
+     mylesp/dockerlamp:latest
  ```
 
 
@@ -107,7 +107,7 @@ Without a domain name type this into a browser:
 ```
 or
 ```
- http://127.0.0.10/ 
+ http://127.0.0.1/ 
 ```
 If you have a domain name type this into a browser:
 
@@ -122,4 +122,7 @@ echo "<html><head><\head><body><h1> Hello world!<\h1><\body><\html>" >> /root/ho
 ```
 Now run refresh your browser and you'll see the string! You are now ready to make websites. If you don't like HTML and CSS, you could always look into wordpress or Graphical user interface software to help you build sites as well.
 
+## Instructions for Windows
+If you have a windows machine don't sweat, here is the instructions for this type of OS. If you don't want to follow my instructions, please refer to the docker documentation https://docs.docker.com/docker-for-windows/install/.
 
+1) The first thing you'll need to do is install docker. Go on to this site to download docker https://store.docker.com/editions/community/docker-ce-desktop-windows. Here is a screenshot on what it should look like:
