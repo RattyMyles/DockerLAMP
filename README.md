@@ -21,7 +21,7 @@ contents:
 ```
     mkdir -p %LOCAL_PATH_TO_HOME_DIRECTORY% 
     docker volume create %mysql_data_volume_variable% 
-    docker volume create %mysql_log_volume_variable% \ 
+    docker volume create %mysql_log_volume_variable% 
     docker volume create %apache_data_volume_variable% 
     docker volume create %httpd_data_volume_variable% 
     
@@ -122,8 +122,9 @@ echo "<html><head><\head><body><h1> Hello world!<\h1><\body><\html>" >> /root/ho
 ```
 Now run refresh your browser and you'll see the string! You are now ready to make websites. If you don't like HTML and CSS, you could always look into wordpress or Graphical user interface software to help you build sites as well.
 
-## Instructions for Windows
-If you have a windows machine don't sweat, here is the instructions for this type of OS. If you don't want to follow my instructions, please refer to the docker documentation https://docs.docker.com/docker-for-windows/install/.
+## Instructions for Windows 10
+
+If you have a windows machine don't sweat, here is the instructions for this type of OS. If you don't want to follow my instructions, please refer to the docker documentation https://docs.docker.com/docker-for-windows/install/. Follow the docker requirements before attempting to install it on your windows machine.
 
 1) The first thing you'll need to do is install docker. Go on to this site to download docker https://store.docker.com/editions/community/docker-ce-desktop-windows. Here is a screenshot on what it should look like:
 
@@ -142,7 +143,31 @@ To see if docker is running on your machine, you will see this icon:
 
 Where you see ">" terminal, this is where you put the container installation. This is what you put in there:
 ```
-PS> docker pull mylesp/dockerlamp
+PS> mkdir %UserProfile%/Desktop/html_data
+docker volume create mysql_data 
+docker volume create mysql_log
+docker volume create apache_data
+docker volume create httpd_data
+docker run -d --name mylespLAMP18.04 -p 80:80 -v mysql_data:/var/lib/mysql/  -v mysql_log:/var/log/mysql/ -v apache_data:/etc/apache2/  -v %UserProfile%/Desktop/html_data:/var/www/html/ -v httpd_data:/var/log/httpd/  --restart unless-stopped mylesp/dockerlamp:latest
 ```
 
+You should see a folder that has been created on the desktop. Inside the html_data folder, you insert the website content inside.
+
+4) To view your content, go on to the browser and type in:
+```
+ http://localhost/
+```
+or
+```
+ http://127.0.0.1/ 
+```
+If you have a domain name type this into a browser:
+
+```
+ http://insert_domain_here/
+```
+
+## Conclusion
+
+This is a quick bundle to get you started in web development. if you have any questions please feel free to comment in 
 
