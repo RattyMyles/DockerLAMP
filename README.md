@@ -27,22 +27,21 @@ contents:
 Example of a working code line:
 ```
 mkdir -p /root/home/docker/html
-mkdir -p /root/home/docker/mysql_log
-mkdir -p /root/home/docker/httpd_log
 docker volume create mysql_data 
 docker volume create mysql_log
 docker volume create apache_data
-
+docker volume create httpd_data
 
 docker run -d --name mylespLAMP18.04 \
      -p 80:80 \
      -v mysql_data:/var/lib/mysql/ \
-     -v /root/home/docker/mysql_log/:/var/log/mysql/ \
+     -v mysql_log:/var/log/mysql/ \
      -v apache_data:/etc/apache2/ \
      -v /root/home/docker/html/:/var/www/html/ \
-     -v /root/home/docker/httpd_log/:/var/log/httpd/ \
+     -v httpd_data:/var/log/httpd/ \
      --restart unless-stopped \
      mylesp/dockerlamp:latest
+
 ```
 
 ## Instructions for Ubuntu 14.04, 16.04, 18.04
@@ -59,20 +58,18 @@ If you haven't got docker on your machine, follow these instructions to start yo
 2) Now that docker has been installed, install the mylesp/dockerlamp container below. The code below will show a working version below, however if wish to change the variables, refer to the document above on what to change.
 ```
 mkdir -p /root/home/docker/html
-mkdir -p /root/home/docker/mysql_log
-mkdir -p /root/home/docker/httpd_log
 docker volume create mysql_data 
 docker volume create mysql_log
 docker volume create apache_data
-
+docker volume create httpd_data
 
 docker run -d --name mylespLAMP18.04 \
      -p 80:80 \
      -v mysql_data:/var/lib/mysql/ \
-     -v /root/home/docker/mysql_log/:/var/log/mysql/ \
+     -v mysql_log:/var/log/mysql/ \
      -v apache_data:/etc/apache2/ \
      -v /root/home/docker/html/:/var/www/html/ \
-     -v /root/home/docker/httpd_log/:/var/log/httpd/ \
+     -v httpd_data:/var/log/httpd/ \
      --restart unless-stopped \
      mylesp/dockerlamp:latest
 ```
@@ -123,11 +120,11 @@ To see if docker is running on your machine, you will see this icon:
 Where you see ">" terminal, this is where you put the container installation. This is what you put in there:
 ```
 PS> mkdir %UserProfile%/Desktop/html_data
-mkdir %UserProfile%/Desktop/mysql_log
-mkdir %UserProfile%/Desktop/httpd_log
 docker volume create mysql_data 
+docker volume create mysql_log
 docker volume create apache_data
-docker run -d --name mylespLAMP18.04 -p 80:80 -v mysql_data:/var/lib/mysql/  -v %UserProfile%/Desktop/mysql_log:/var/log/mysql/ -v apache_data:/etc/apache2/  -v %UserProfile%/Desktop/html_data:/var/www/html/ -v %UserProfile%/Desktop/httpd_log:/var/log/httpd/  --restart unless-stopped mylesp/dockerlamp:latest
+docker volume create httpd_data
+docker run -d --name mylespLAMP18.04 -p 80:80 -v mysql_data:/var/lib/mysql/  -v mysql_log:/var/log/mysql/ -v apache_data:/etc/apache2/  -v %UserProfile%/Desktop/html_data:/var/www/html/ -v httpd_data:/var/log/httpd/  --restart unless-stopped mylesp/dockerlamp:latest
 ```
 
 You should see a folder that has been created on the desktop. Inside the html_data folder, you insert the website content inside.
