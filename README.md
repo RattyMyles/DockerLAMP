@@ -10,6 +10,10 @@ This container is useful for people that would want to develop and test projects
 
 However, this container is not the best code of practice because the purpose of docker is to be lightweight and agile. Therefore on a production level you should limit compute processes to one per container. 
 
+## Feedback
+
+If you have any comments, feedback, or issues please do contact me on https://github.com/RattyMyles/DockerLAMP/issues. I will reply as soon as I can.
+
 ## mylesp/dockerlamp:latest
 contents: 
   * Ubunbtu 18.04
@@ -169,5 +173,5 @@ If you have a domain name type this into a browser:
 
 ## Conclusion
 
-This is a quick bundle to get you started in web development. if you have any questions please feel free to comment in 
+This is a quick bundle to get you started in web development. If you have any questions or issues, please feel free to send me a message on: https://github.com/RattyMyles/DockerLAMP/issues 
 
