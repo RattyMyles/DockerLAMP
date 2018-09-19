@@ -67,3 +67,59 @@ docker run -d --name mylespLAMP18.04 \
  --restart unless-stopped \
  mylesp/dockerlamp:latest
 ```
+
+## Instructions for Linux 18.04
+
+If you haven't got docker on your machine, follow these instructions to start you off. If you are the type that have little patients, this is great because you will see how easy and quick to install docker and the docker container in minutes.
+
+1) Type the code below in the terminal to install the repository and docker. 
+```
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  apt-key add -
+ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+ apt-get update
+ apt-get install -y docker-ce
+```
+2) Now that docker has been installed, install the mylesp/dockerlamp container below. The code below will show a working version below, however if wish to change the variables, refer to the document above on what to change.
+```
+mkdir -p /root/home/docker/html
+docker volume create mysql_data 
+docker volume create mysql_log
+docker volume create apache_data
+docker volume create httpd_data
+
+docker run -d --name mylespLAMP18.04 \
+ -p 80:80 \
+ -v mysql_data:/var/lib/mysql/ \
+ -v mysql_log:/var/log/mysql/ \
+ -v apache_data:/etc/apache2/ \
+ -v /root/home/docker/html/:/var/www/html/ \
+ -v httpd_data:/var/log/httpd/ \
+ --restart unless-stopped \
+ mylesp/dockerlamp:latest
+ ```
+
+
+3) Congratulations! you've installed your first docker container in minutes! Now, lets test to see if it works. You can use your domain name or IP address of the server/machine that it is running on. Here is an example below: 
+
+Without a domain name type this into a browser:
+```
+ http://localhost/
+```
+or
+```
+ http://127.0.0.10/ 
+```
+If you have a domain name type this into a browser:
+
+```
+ http://insert_domain_here/
+```
+Now that you have tested it on the browser you won't see much. This is why you need to add some content inside the "/root/home/docker/html/" or the file directory that you changed it too.
+
+4) This test is just to print out an "Hello world!" string on to your browser. Either create a HTML document your self or try this code but delete it afterwards when you want to start building:
+```
+echo "<html><head><\head><body><h1> Hello world!<\h1><\body><\html>" >> /root/home/docker/html/index.html
+```
+Now run refresh your browser and you'll see the string! You are now ready to make websites. If you don't like HTML and CSS, you could always look into wordpress or Graphical user interface software to help you build sites as well.
+
+
