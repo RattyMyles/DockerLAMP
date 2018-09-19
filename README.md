@@ -129,3 +129,6 @@ If you have a windows machine don't sweat, here is the instructions for this typ
 
 ![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/dockerWInstall.PNG  "Logo Title Text 1")
 
+2) you'll need to verify the installation by going into the menu to search and select docker. For example: 
+
+
