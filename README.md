@@ -137,5 +137,12 @@ If you have a windows machine don't sweat, here is the instructions for this typ
 To see if docker is running on your machine, you will see this icon:
 ![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/iconImage.png  "Logo Title Text 1")
 
+3) Now you should see the image below:
+![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/docker-app-welcome.png "Logo Title Text 1")
+
+Where you see ">" terminal, this is where you put the container installation. This is what you put in there:
+```
+PS> docker pull mylesp/dockerlamp
+```
 
 
