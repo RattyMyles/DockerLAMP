@@ -126,3 +126,5 @@ Now run refresh your browser and you'll see the string! You are now ready to mak
 If you have a windows machine don't sweat, here is the instructions for this type of OS. If you don't want to follow my instructions, please refer to the docker documentation https://docs.docker.com/docker-for-windows/install/.
 
 1) The first thing you'll need to do is install docker. Go on to this site to download docker https://store.docker.com/editions/community/docker-ce-desktop-windows. Here is a screenshot on what it should look like:
+
+Inline-style: ![alt text](https://raw.githubusercontent.com/RattyMyles/DockerLAMP/master/website/Docker install.PNG "Logo Title Text 1")
