@@ -23,8 +23,11 @@ contents:
   * supervisor
   * apache2
 
+### Side note MYSQL
+MYSQL has no security installed, this makes your data applications much simpler. However this is not suitable for production use. 
 
 Example of a working code line:
+
 ```
 mkdir -p /root/home/docker/html
 docker volume create mysql_data 
@@ -41,21 +44,23 @@ docker run -d --name mylespLAMP18.04 \
      -v httpd_data:/var/log/httpd/ \
      --restart unless-stopped \
      mylesp/dockerlamp:latest
-
-```
+``` 
 
 ## Instructions for Ubuntu 14.04, 16.04, 18.04
 
 If you haven't got docker on your machine, follow these instructions to start you off. If you are the type that have little patients, this is great because you will see how easy and quick to install docker and the docker container in minutes. Please refer to the docker documentation if you don't wish to follow these instructions https://docs.docker.com/v17.12/install/. 
 
 1) Type the code below in the terminal to install the repository and docker. 
+
 ```
- curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  apt-key add -
- add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
- apt-get update
- apt-get install -y docker-ce
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get update
+apt-get install -y docker-ce
 ```
-2) Now that docker has been installed, install the mylesp/dockerlamp container below. The code below will show a working version below, however if wish to change the variables, refer to the document above on what to change.
+
+2) Now that docker has been installed, install the mylesp/dockerlamp container below. The code below will show a working version below.
+
 ```
 mkdir -p /root/home/docker/html
 docker volume create mysql_data 
@@ -73,7 +78,6 @@ docker run -d --name mylespLAMP18.04 \
      --restart unless-stopped \
      mylesp/dockerlamp:latest
 ```
-
 
 3) Congratulations! you've installed your first docker container in minutes! Now, lets test to see if it works. You can use your domain name or IP address of the server/machine that it is running on. Here is an example below: 
 
@@ -96,7 +100,7 @@ Now that you have tested it on the browser you won't see much. This is why you n
 ```
 echo "<html><head><\head><body><h1> Hello world!<\h1><\body><\html>" >> /root/home/docker/html/index.html
 ```
-Now run refresh your browser and you'll see the string! You are now ready to make websites. If you don't like HTML and CSS, you could always look into wordpress or Graphical user interface software to help you build sites as well.
+Now run refresh your browser and you'll see the string! You are now ready to make websites. If you don't like HTML and CSS, you could always look into wordpress or a graphical user interface software to help you build sites as well.
 
 ## Instructions for Windows 10
 
