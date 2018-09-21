@@ -13,12 +13,10 @@ RUN apt-get -y install supervisor
 
 RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
-RUN echo "<?php phpinfo(); ?>" > /var/www/html/info.php
-
 RUN mkdir -p /var/run/mysqld
 RUN chown mysql:mysql /var/run/mysqld
 
-# docker doesn't understand AUFS, we had to put the var/lib into a var volume
+# MYSQL has an issue with docker file systems
 
 RUN echo "[program:mysql]" > /etc/supervisor/conf.d/mysql.conf
 RUN	echo "#command=/usr/bin/mysqld_safe" >> /etc/supervisor/conf.d/mysql.conf
