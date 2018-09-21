@@ -13,7 +13,6 @@ RUN apt-get -y update && \
 		php-mysql \
 		supervisor && \
 	ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime && dpkg-reconfigure -f noninteractive tzdata  && \
-	echo "<?php phpinfo(); ?>" > /var/www/html/info.php && \
 	mkdir -p /var/run/mysqld && \
 	chown mysql:mysql /var/run/mysqld && \
 	echo "[program:mysql]" > /etc/supervisor/conf.d/mysql.conf && \
